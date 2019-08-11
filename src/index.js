@@ -9,7 +9,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 mongoose.connect(
-    'mongodb+srv://adler:adler@cluster0-4zgaf.mongodb.net/test?retryWrites=true&w=majority', {
+    'mongodb+srv://adler:qWh0xIt2TN6zUddq@cluster0-4zgaf.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true
 });
 
@@ -26,4 +26,4 @@ app.use('/files', express.static(
     ))
 app.use(require('./routes')); // utilizando rotas
 
-server.listen(3333);
+server.listen(process.env.PORT|| 3333);
