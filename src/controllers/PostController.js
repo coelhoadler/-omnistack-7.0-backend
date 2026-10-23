@@ -39,7 +39,7 @@ module.exports = {
         return res.json(post)
     },
     async remove(req, res) {
-        let errorData = {'error': false};;
+        let errorData = {'error': false};
         await Post.findByIdAndRemove(req.params.id, (err) => {
             if (err) {
                 errorData = {
